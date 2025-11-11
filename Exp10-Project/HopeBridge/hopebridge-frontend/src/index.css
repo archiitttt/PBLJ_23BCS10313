@@ -1,0 +1,807 @@
+/* ==================================== */
+/* === GLOBAL & LAYOUT STYLES === */
+/* ==================================== */
+
+body{
+    font-family: 'Inter', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #1A1A2E;
+    background-image: url(./images/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    backdrop-filter: blur(3px);
+}
+
+nav{
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.logo > img{
+    height: 5rem;
+    width: 5rem;
+}
+
+.nav-options > ul{
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    gap: 5rem;
+    font-size: 1.2rem;
+}
+
+.nav-options > ul > li > a{
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+}
+
+.nav-options > ul > li > a::after{
+    position: absolute;
+    content :"";
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+}
+
+.nav-options > ul > li > a:hover::after{
+    width: 100%;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Glass Effect Wrapper for Content Sections */
+.glass{
+    height: max-content;
+    margin-bottom: 5rem;
+    background:#e5e5e6b9;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+/* Buttons */
+.donate-btns > button, .btns{
+    background-color: #2f82f7;
+    padding: 15px 20px;
+    border: 1px solid #2d68b9;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.2rem;
+    width: 13rem;
+    cursor: pointer;
+}
+
+.btn:active{
+    translate: 0px 1.5px;
+}
+
+hr{
+    width: 60%;
+}
+
+/* ==================================== */
+/* === SECTION STYLES (HERO, HOW IT WORKS) === */
+/* ==================================== */
+
+.hero{
+    height: 55rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+}
+
+.hero > h1{
+    font-size: 5rem;
+    margin: 0;
+    cursor:default;
+}
+
+.hero > p{
+    font-size: 1.5rem;
+}
+
+.donate-btns{
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Content 1: Browse by Category */
+.content{
+    height: 25rem;
+    width: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+    margin-bottom: 5rem;
+}
+
+.content > h2{
+    font-size: 2.5rem;
+}
+
+.content > ul{
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    gap: 15rem;
+}
+
+.content > ul > li{
+    text-align: center;
+    cursor: pointer;
+}
+
+.content > ul > li > img{
+    height: 5rem;
+    width: 5rem;
+    filter: brightness(200%) contrast(80%);
+}
+
+.content > ul > li > p{
+    margin-top: 5px;
+    font-size: 1.3rem;
+}
+
+/* Content 2: How It Works */
+.content2{
+    height: 25rem;
+    width: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+    margin-bottom: 5rem;
+}
+
+.content2 > h2{
+    font-size: 2.5rem;
+}
+
+.content2 > ul{
+    list-style: none;
+    display: flex;
+    padding-left: 0;
+    gap: 7rem;
+}
+
+.content2 > ul > li{
+    text-align: center;
+    cursor: pointer;
+}
+
+.content2 > ul > li > h3{
+    font-size: 1.4rem;
+    margin: 12px 0;
+}
+
+.content2 > ul > li > img{
+    height: 5rem;
+    width: 5rem;
+    filter: brightness(115%);
+}
+
+.content2 > ul > li > p{
+    font-size: 1.3rem;
+    max-width: 20rem;
+    margin-top: 0;
+}
+
+/* Join HopeBridge Section */
+.join-hopebridge{
+    display: flex;
+    width: 100rem;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+    margin-bottom: 5rem;
+}
+
+.join-hopebridge > div h2{
+    font-size: 2.5rem;
+}
+.join-hopebridge > div p{
+    font-size: 1.3rem;
+}
+
+/* ==================================== */
+/* === FEATURED CAMPAIGNS (CARDS) FIXES === */
+/* ==================================== */
+
+.featured{
+    width: 100rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly; 
+}
+
+.featured > h2{
+    font-size: 2.5rem;
+}
+
+.card-container{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    gap: 7rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.card{
+    height: 25rem;
+    width: 20rem;
+    border-radius: 20px;
+    background-color: white;
+    transition: transform 0.3s ease;
+}
+
+/* FIX 1: Target the Link inside the card to remove default link styling */
+.card > a {
+    text-decoration: none; 
+    color: inherit; 
+    display: block; 
+    height: 100%;
+}
+
+/* FIX 2: Target the image inside the Link (the new structure) */
+.card > a > img{ 
+    height: 15rem;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+}
+
+.card-content{
+    padding: 0 15px;
+}
+
+.card-content > h3{
+    font-size: 1.5rem;
+    margin: 5px 0;
+}
+
+.card-content > progress{
+    width: 100%;
+    height: 1.7rem;
+}
+
+/* FIX 3: Ensure card hover effect applies correctly to the card */
+.card:hover{
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+/* ==================================== */
+/* === LOGIN FORM STYLES === */
+/* ==================================== */
+
+.login-main > form{
+    display: flex;
+    flex-direction: column;
+}
+
+.login-main > form > input{
+    margin-bottom: 10px;
+}
+
+/* ==================================== */
+/* === FUNDRAISER FORM STYLES === */
+/* ==================================== */
+
+/* Main Container */
+.fundraiser-main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.95); 
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.fundraiser-main h1 {
+    text-align: center;
+    color: var(--primary-color, #1e3a8a);
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+/* Form Styling */
+.fundraiser-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 1rem;
+}
+
+.fundraiser-form input[type="text"],
+.fundraiser-form input[type="number"],
+.fundraiser-form input[type="url"],
+.fundraiser-form textarea,
+.fundraiser-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.fundraiser-form textarea {
+    resize: vertical;
+}
+
+.fundraiser-form input:focus,
+.fundraiser-form textarea:focus,
+.fundraiser-form select:focus {
+    border-color: #3b82f6; 
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+/* Two-column layout */
+.grid-cols-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Submit Button */
+.fundraiser-submit-btn {
+    background-color: var(--accent-color, #3b82f6); 
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+.fundraiser-submit-btn:hover {
+    background-color: #2563eb;
+    transform: translateY(-1px);
+}
+
+/* Submission Status Messages */
+.status-message {
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.status-success {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.status-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+/* ==================================== */
+/* === FOOTER STYLES === */
+/* ==================================== */
+
+footer {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.footer-content {
+    max-width: 100rem;
+    margin: 0 auto;
+    color: #1A1A2E;
+}
+
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-logo img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.footer-links {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #1A1A2E;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #2f82f7;
+}
+
+footer p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+
+footer .copyright {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.campaign-detail-main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 40px;
+    background: white; 
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.campaign-detail-main h1 {
+    font-size: 2.5rem;
+    color: #1A1A2E;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- Action Button Group --- */
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.action-buttons button,
+.action-buttons button:hover {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    /* Resetting transform to avoid conflict with .btn:active */
+    transform: none; 
+}
+
+/* Edit Button */
+.btn-edit {
+    background-color: #3b82f6; /* Blue */
+    color: white;
+}
+.btn-edit:hover {
+    background-color: #2563eb;
+}
+
+/* Delete Button */
+.btn-delete {
+    background-color: #ef4444; /* Red */
+    color: white;
+}
+.btn-delete:hover {
+    background-color: #dc2626;
+}
+
+/* Save Button */
+.btn-save {
+    background-color: #10b981; /* Green */
+    color: white;
+}
+.btn-save:hover {
+    background-color: #059669;
+}
+
+/* Cancel Button */
+.btn-cancel {
+    background-color: #9ca3af; /* Gray */
+    color: white;
+}
+.btn-cancel:hover {
+    background-color: #6b7280;
+}
+
+/* --- Read-Only Detail View --- */
+.detail-view {
+    line-height: 1.8;
+    color: #4b5563;
+}
+
+.detail-view img {
+    max-height: 450px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.detail-view p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.detail-view strong {
+    color: #1A1A2E;
+    font-weight: 700;
+}
+
+/* Funding status display */
+.funding-status {
+    display: flex;
+    gap: 40px;
+    margin-top: 20px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
+
+.funding-status div {
+    font-size: 1.2rem;
+}
+
+/* --- Edit Form View --- */
+.edit-form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.edit-form input[type="text"],
+.edit-form input[type="number"],
+.edit-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+.edit-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Loading/Error Messages */
+.message-center {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 1.5rem;
+    color: #3b82f6;
+}
+.error-message {
+    color: #dc2626;
+    font-weight: 700;
+}
+
+.donate-btns{
+    width: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* New: Target the Link (<a> tag) inside the container */
+.donate-btns > a {
+    text-decoration: none; /* Remove underline from the link */
+    color: inherit;      /* Ensure text color is inherited */
+    width: 13rem;        /* Give the Link the same width as the button */
+}
+
+/* Original rule, modified to include the link wrapper's button */
+.donate-btns > button, 
+.donate-btns > a > button, /* FIX: Target button inside the Link (a tag) */
+.btns {
+    background-color: #2f82f7;
+    padding: 15px 20px;
+    border: 1px solid #2d68b9;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.2rem;
+    width: 13rem; /* Make button fill the link width (13rem) */
+    cursor: pointer;
+}
+
+/* Ensure the 'Join Now' button (which still uses .btns) works: */
+.btn:active{
+    translate: 0px 1.5px;
+}
+
+/* ==================================== */
+/* === ABOUT PAGE STYLES === */
+/* ==================================== */
+
+/* Wrapper to center the page and reuse the existing .glass style */
+.about-wrapper {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 50px;
+    /* .glass style provides the background and blur */
+}
+
+.about-content {
+    padding: 0 20px;
+}
+
+.about-content h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1A1A2E;
+    margin-bottom: 10px;
+}
+
+.about-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2f82f7; /* Match primary button color */
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba(47, 130, 247, 0.2);
+    padding-bottom: 10px;
+}
+
+.mission-statement {
+    text-align: center;
+}
+
+.lead-paragraph {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #444;
+}
+
+.values-section ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.values-section li {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid #2f82f7;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.values-section li strong {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    color: #1A1A2E;
+}
+
+.contact-info {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.1rem;
+}
+
+.contact-info a {
+    color: #2f82f7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.donation-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.donation-form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-form-container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.donation-form-container label {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.donation-form-container input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.modal-actions button {
+    width: 48%;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+}
